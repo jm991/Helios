@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+
+  <Identity Name="09042b22-2eba-4398-a479-4508d922ed05"
+            Publisher="CN=johnmce"
+            Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="704b1f30-a22d-46e8-8303-fc81be3d1904" PhonePublisherId="2e83c8b0-7006-4efe-b90e-c9715524b46b"/>
+
+  <Properties>
+    <DisplayName>Helios</DisplayName>
+    <PublisherDisplayName>johnmce</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="x704b1f30ya22dy46e8y8303yfc81be3d1904x"
+        Executable="AGHost.exe"
+        EntryPoint="MainPage.xaml">
+      <m2:VisualElements
+          DisplayName="Helios"
+          Square150x150Logo="Assets\Logo.png"
+          Square30x30Logo="Assets\SmallLogo.png"
+          Description="Helios"
+          ForegroundText="light"
+          BackgroundColor="#464646">
+        <m2:DefaultTile Wide310x150Logo="Assets\WideLogo.png"/>
+        <m2:SplashScreen Image="Assets\SplashScreen.png" />
+        <m2:ApplicationView MinWidth="width320"/> <!--Used in XAML Designer. DO NOT REMOVE-->
+      </m2:VisualElements>
+      
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+  
+</Package>
