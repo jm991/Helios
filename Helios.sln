@@ -1,23 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30114.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helios", "Helios\Helios.csproj", "{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helios.Controls", "Helios.Controls\Helios.Controls.csproj", "{3BC09D88-CD3A-4074-9E05-75B7CC8E9517}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://homebrewerstoolkit.tfspreview.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Helios.Controls\\Helios.Controls.csproj
-		SccProjectName1 = Helios.Controls
-		SccLocalPath1 = Helios.Controls
-		SccProjectUniqueName2 = Helios\\Helios.csproj
-		SccProjectName2 = Helios
-		SccLocalPath2 = Helios
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM

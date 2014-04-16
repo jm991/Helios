@@ -1,4 +1,4 @@
-﻿namespace Helios
+﻿namespace Helios.View
 {
     using System;
     using System.Collections.Generic;
