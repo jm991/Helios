@@ -9,5 +9,6 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <FontIcon Glyph="&#xE01E;" FontFamily="{StaticResource AppFont}"/>
+        <Button x:Name="PickAFileButton" Content="Pick video"/>
     </Grid>
 </Page>
