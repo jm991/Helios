@@ -1,0 +1,5 @@
+﻿<local:ClipCollection xmlns:local="clr-namespace:Helios.Model" >
+    
+    <local:Clip ClipDuration="00:00:50" EndTime="00:00:40" StartTime="00:00:10"/>
+
+</local:ClipCollection>

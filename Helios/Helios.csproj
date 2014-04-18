@@ -104,8 +104,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\ClipConverter.cs" />
+    <Compile Include="Converters\ClipToValueConverter.cs" />
+    <Compile Include="Converters\TimeSpanToValueConverter.cs" />
     <Compile Include="Model\Clip.cs" />
     <Compile Include="Model\ModelBase.cs" />
+    <Compile Include="Model\Wrappers.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -122,7 +127,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <DesignData Include="SampleData\SampleClip.xaml">
+    <DesignData Include="DesignData\SampleClip.xaml">
+      <SubType>Designer</SubType>
+    </DesignData>
+    <DesignData Include="DesignData\SampleClips.xaml">
+      <SubType>Designer</SubType>
+    </DesignData>
+    <DesignData Include="DesignData\SampleClipWrapper.xaml">
       <SubType>Designer</SubType>
     </DesignData>
     <Page Include="View\MainPage.xaml">

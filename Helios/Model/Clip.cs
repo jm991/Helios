@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Helios.Converters;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +9,7 @@ using System.Windows;
 
 namespace Helios.Model
 {
+    [TypeConverter(typeof(ClipConverter))]
     public class Clip : ModelBase
     {
         #region Property-behind variables (private)
@@ -72,6 +75,8 @@ namespace Helios.Model
 
         #region Constructors
 
+        // Default constructor is required for usage as sample data 
+        // in the WPF and Silverlight Designer.
         public Clip()
         {
             this.ClipDuration = new TimeSpan();
@@ -79,6 +84,47 @@ namespace Helios.Model
             this.EndTime = new TimeSpan();
         }
 
+        public Clip(double start, double end, double duration)
+        {
+            StartTime = TimeSpan.FromSeconds(start);
+            EndTime = TimeSpan.FromSeconds(end);
+            ClipDuration = TimeSpan.FromSeconds(duration);
+        }
+
+        public Clip(string value)
+        {
+            // TODO: add better error handling
+            string[] timeStrs = ((string)value).Split(new char[] { ',' });
+            TimeSpan[] times = new TimeSpan[3];
+
+            for (int i = 0; i < timeStrs.Length; i++)
+            {
+                times[i] = TimeSpan.Parse(timeStrs[i]);
+            }
+
+            StartTime = times[0];
+            EndTime = times[1];
+            ClipDuration = times[2];
+        }
+
         #endregion
+
+
+        #region Methods
+
+        public override string ToString()
+        {
+            return StartTime.ToString() + " " + EndTime.ToString() + " " + ClipDuration.ToString();
+        }
+
+        #endregion
+    }
+
+    // The ClipCollection class defines a simple collection
+    // for Clip business objects.
+    public class ClipCollection : List<Clip>
+    {
+        // Default constructor is required for usage in the WPF Designer.
+        public ClipCollection() { }
     }
 }

@@ -10,6 +10,7 @@
     using Microsoft.Phone.Controls;
     using Microsoft.Phone.Shell;
     using Helios.Resources;
+    using Helios.Model;
 
     public partial class MainPage : PhoneApplicationPage
     {
@@ -17,6 +18,8 @@
         public MainPage()
         {
             InitializeComponent();
+            //Settings.Clip = new Clip(10, 40, 50);
+            //TheSlider.DataContext = new ClipWrapper(Settings.Clip);
         }
     }
 }

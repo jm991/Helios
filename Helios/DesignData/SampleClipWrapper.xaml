@@ -1,0 +1,5 @@
+﻿<local:ClipWrapper xmlns:local="clr-namespace:Helios.Model">
+    <local:ClipWrapper.ClipToWrap>
+        <local:Clip ClipDuration="00:00:50" StartTime="00:00:10" EndTime="00:00:40"/>
+    </local:ClipWrapper.ClipToWrap> 
+</local:ClipWrapper>

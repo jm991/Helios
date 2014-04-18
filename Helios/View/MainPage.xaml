@@ -12,6 +12,14 @@
     SupportedOrientations="Portrait"
     Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
+    <!--
+    xmlns:converters="clr-namespace:Helios.Converters;assembly=Helios"
+    xmlns:local="clr-namespace:Helios.Model" -->
+
+    <!--<phone:PhoneApplicationPage.Resources>
+        <converters:ClipToValueConverter x:Name="clipToValueConverter" />
+        <converters:TimeSpanToValueConverter x:Name="timeSpanToValueConverter" />
+    </phone:PhoneApplicationPage.Resources>-->
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot"
@@ -20,6 +28,8 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        
+        <!--<MediaElement x:Name="m_player" Grid.RowSpan="2"/>-->
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel"
@@ -37,22 +47,29 @@
         <Grid x:Name="ContentPanel"
               Grid.Row="1"
               Margin="12 0">
+            
             <Grid.RowDefinitions>
                 <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
             
-            <Slider x:Name="TheSlider"
-                    Minimum="0"
-                    Maximum="100"
-                    Value="30"
-                    Grid.Row="2"
-                    Grid.ColumnSpan="2" />
+            <!--<Slider 
+                x:Name="TheSlider"
+                Minimum="0"
+                Maximum="100"
+                Grid.Row="1"
+                Value="{Binding Converter={StaticResource clipToValueConverter}, ConverterParameter=start, Path=ClipToWrap}"
+                d:DataContext="{d:DesignData Source=../DesignData/SampleClipWrapper.xaml}"
+            />
+
+            <Button
+                Grid.Row="2"
+                x:Name="m_pickVideoBtn"
+                Style="{StaticResource LargeAppBarButtonStyle}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+            </Button>-->
         </Grid>
 
     </Grid>
