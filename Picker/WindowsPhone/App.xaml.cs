@@ -1,14 +1,15 @@
-﻿using System;
+// Copyright (c) Microsoft. All rights reserved.
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.Phone.UI.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -17,9 +18,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
-
-namespace TestApp
+namespace FilePicker.Shared
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -30,14 +29,13 @@ namespace TestApp
         ContinuationManager continuationManager;
 #endif
         /// <summary>
-        /// Initializes the singleton application object.  This is the first line of authored code
+        /// Initializes the singleton Application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         public App()
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            HardwareButtons.BackPressed += HardwareButtons_BackPressed;
         }
 
         private Frame CreateRootFrame()
@@ -82,28 +80,6 @@ namespace TestApp
         }
 
         /// <summary>
-        /// Handles back button press.  If app is at the root page of app, don't go back and the
-        /// system will suspend the app.
-        /// </summary>
-        /// <param name="sender">The source of the BackPressed event.</param>
-        /// <param name="e">Details for the BackPressed event.</param>
-        private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
-        {
-            Frame frame = Window.Current.Content as Frame;
-            if (frame == null)
-            {
-                return;
-            }
-
-            if (frame.CanGoBack)
-            {
-                frame.GoBack();
-                e.Handled = true;
-            }
-        }
-
-#if WINDOWS_PHONE_APP
-        /// <summary>
         /// Handle OnActivated event to deal with File Open/Save continuation activation kinds
         /// </summary>
         /// <param name="e">Application activated event arguments, it can be casted to proper sub-type based on ActivationKind</param>
@@ -116,7 +92,7 @@ namespace TestApp
             Frame rootFrame = CreateRootFrame();
             await RestoreStatusAsync(e.PreviousExecutionState);
 
-            if (rootFrame.Content == null)
+            if(rootFrame.Content == null)
             {
                 rootFrame.Navigate(typeof(MainPage));
             }
@@ -124,7 +100,7 @@ namespace TestApp
             var continuationEventArgs = e as IContinuationActivatedEventArgs;
             if (continuationEventArgs != null)
             {
-                Frame scenarioFrame = MainPage.Current.FindName("ScenarioFrame") as Frame;
+                Frame scenarioFrame = MainPage.Current.Frame;
                 if (scenarioFrame != null)
                 {
                     // Call ContinuationManager to handle continuation activation
@@ -134,70 +110,30 @@ namespace TestApp
 
             Window.Current.Activate();
         }
-#endif
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
-        /// will be used when the application is launched to open a specific file, to display
-        /// search results, and so forth.
+        /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            Frame rootFrame = CreateRootFrame();
+            await RestoreStatusAsync(e.PreviousExecutionState);
 
-#if DEBUG
-            if (System.Diagnostics.Debugger.IsAttached)
-            {
-                this.DebugSettings.EnableFrameRateCounter = true;
-            }
-#endif
-            Frame rootFrame = Window.Current.Content as Frame;
+            //MainPage is always in rootFrame so we don't have to worry about restoring the navigation state on resume
+            rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
-            // Do not repeat app initialization when the Window already has content,
-            // just ensure that the window is active
-            if (rootFrame == null)
-            {
-                // Create a Frame to act as the navigation context and navigate to the first page
-                rootFrame = new Frame();
-
-                // Set the default language
-                rootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
-
-                rootFrame.NavigationFailed += OnNavigationFailed;
-
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-                {
-                    //TODO: Load state from previously suspended application
-                }
-
-                // Place the frame in the current Window
-                Window.Current.Content = rootFrame;
-            }
-
-            if (rootFrame.Content == null)
-            {
-                // When the navigation stack isn't restored navigate to the first page,
-                // configuring the new page by passing required information as a navigation
-                // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
-            }
             // Ensure the current window is active
             Window.Current.Activate();
         }
 
-        protected override void OnWindowCreated(WindowCreatedEventArgs e)
-        {            
-            // Load the custom app font and insert it into the Resources map
-            FontFamily appFont = new FontFamily("/Assets/MoMoPhoneSym.ttf#MoMoPhone Symbol");
-            Resources.Add("AppFont", appFont);
-        }
-
         /// <summary>
-        /// Invoked when Navigation to a certain page fails.
+        /// Invoked when Navigation to a certain page fails
         /// </summary>
-        /// <param name="sender">The Frame which failed navigation.</param>
-        /// <param name="e">Details about the navigation failure.</param>
-        private void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+        /// <param name="sender">The Frame which failed navigation</param>
+        /// <param name="e">Details about the navigation failure</param>
+        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
@@ -212,7 +148,6 @@ namespace TestApp
         private async void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
-            // Save application state and stop any background activity
             await SuspensionManager.SaveAsync();
             deferral.Complete();
         }
