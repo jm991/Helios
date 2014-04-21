@@ -92,4 +92,7 @@
     <Content Include="Assets\tile-sdk.png" />
     <Content Include="Assets\windows-sdk.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\MoMoPhoneSym.ttf" />
+  </ItemGroup>
 </Project>

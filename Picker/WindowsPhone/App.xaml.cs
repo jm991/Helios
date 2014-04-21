@@ -18,7 +18,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace FilePicker.Shared
+namespace Helios
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -126,6 +126,13 @@ namespace FilePicker.Shared
 
             // Ensure the current window is active
             Window.Current.Activate();
+        }
+
+        protected override void OnWindowCreated(WindowCreatedEventArgs e)
+        {
+            // Load the custom app font and insert it into the Resources map
+            FontFamily appFont = new FontFamily("/Assets/MoMoPhoneSym.ttf#MoMoPhone Symbol");
+            Resources.Add("AppFont", appFont);
         }
 
         /// <summary>
