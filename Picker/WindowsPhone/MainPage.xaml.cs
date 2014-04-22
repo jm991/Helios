@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
+<<<<<<< HEAD
 using System.IO;
+=======
+>>>>>>> 491bd092900479a7f2010903283032c78dd46f87
 using Windows.ApplicationModel.Activation;
 using Windows.Media.Editing;
 using Windows.Storage;
@@ -25,7 +28,10 @@ namespace Helios
         public bool MediaLoaded { get; set; }
         private MediaClip m_clip;
         private MediaComposition m_composition;
+<<<<<<< HEAD
         private string fileName;
+=======
+>>>>>>> 491bd092900479a7f2010903283032c78dd46f87
 
         public MainPage()
         {
@@ -46,8 +52,12 @@ namespace Helios
         {
             if (args.Files.Count > 0)
             {
+<<<<<<< HEAD
                 fileName = Path.GetFileNameWithoutExtension(args.Files[0].Name);
                 Debug.WriteLine("Picked video: " + fileName + " with full name: " + args.Files[0].Name);
+=======
+                Debug.WriteLine("Picked video: " + args.Files[0].Name);
+>>>>>>> 491bd092900479a7f2010903283032c78dd46f87
                 MediaLoaded = true;
 
                 m_clip = await MediaClip.CreateFromFileAsync(args.Files[0]);
@@ -60,7 +70,11 @@ namespace Helios
                 TrimEnd.IsEnabled = true;
                 TrimStart.Maximum = m_clip.OriginalDuration.TotalMilliseconds;
                 TrimEnd.Maximum = m_clip.OriginalDuration.TotalMilliseconds;
+<<<<<<< HEAD
                 TrimEnd.Value = TrimStart.Maximum;
+=======
+                //TrimEnd.Value = TrimStart.Maximum;
+>>>>>>> 491bd092900479a7f2010903283032c78dd46f87
 
                 //// Set up the MediaElement for preview
                 // TODO: pass in the preview streamsource and grab the screensize to determine this in addition to the aspect ratio of the video
@@ -114,8 +128,12 @@ namespace Helios
 	
 	        // Create a StorageFile to hold the result
 	        // TODO: use a better filename that is a variable
+<<<<<<< HEAD
             StorageFile outputFile = await KnownFolders.SavedPictures.CreateFileAsync(fileName + "_Trim.mp4", CreationCollisionOption.GenerateUniqueName);
 	        // StorageFile outputFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("VideoOutput.mp4", CreationCollisionOption.GenerateUniqueName);
+=======
+	        StorageFile outputFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("VideoOutput.mp4", CreationCollisionOption.GenerateUniqueName);
+>>>>>>> 491bd092900479a7f2010903283032c78dd46f87
 	
 	        try
 	        {
