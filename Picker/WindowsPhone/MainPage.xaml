@@ -59,19 +59,11 @@
                     x:Name="TrimStart"
                     IsEnabled="False"
                     ValueChanged="TrimStart_ValueChanged"
-<<<<<<< HEAD
-=======
-                    Maximum="100"
->>>>>>> 491bd092900479a7f2010903283032c78dd46f87
                     />
                 <Slider
                     x:Name="TrimEnd"
                     IsEnabled="False"
                     ValueChanged="TrimEnd_ValueChanged"
-<<<<<<< HEAD
-=======
-                    Maximum="100"
->>>>>>> 491bd092900479a7f2010903283032c78dd46f87
                     />
             </StackPanel>
             <!--

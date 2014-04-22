@@ -28,10 +28,7 @@
       </m3:VisualElements>
     </Application>
   </Applications>
-<<<<<<< HEAD
   <Capabilities>
     <Capability Name="picturesLibrary" />
   </Capabilities>
-=======
->>>>>>> 491bd092900479a7f2010903283032c78dd46f87
 </Package>
