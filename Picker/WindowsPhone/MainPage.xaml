@@ -1,0 +1,111 @@
+﻿<Page 
+	x:Class="Helios.MainPage" 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:local="using:Helios" 
+	xmlns:common="using:SDKTemplate.Common" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+	>
+    <!--FontSize="{StaticResource PhoneFontSizeNormal}"-->
+    
+	<!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid 
+        x:Name="LayoutRoot"
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+        >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <MediaElement x:Name="m_player" Grid.RowSpan="2"/>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel"
+                    Grid.Row="0"
+                    Margin="12,17,0,28">
+            <TextBlock 
+				Text="HELIOS CONTROLS"
+                Margin="12,0" 
+				/>
+            <!--Style="{StaticResource PhoneTextNormalStyle}"-->
+            <TextBlock 
+				Text="radial range"
+                Margin="9,-7,0,0"
+				/>
+            <!--Style="{StaticResource PhoneTextTitle1Style}"-->
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel"
+              Grid.Row="1"
+              Margin="12 0">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <StackPanel 
+                VerticalAlignment="Bottom"
+                Margin="0 0 0 25"
+                >
+                <Slider
+                    x:Name="TrimStart"
+                    IsEnabled="False"
+                    ValueChanged="TrimStart_ValueChanged"
+                    />
+                <Slider
+                    x:Name="TrimEnd"
+                    IsEnabled="False"
+                    ValueChanged="TrimEnd_ValueChanged"
+                    />
+            </StackPanel>
+            <!--
+                Value="{Binding Converter={StaticResource clipToValueConverter}, ConverterParameter=start, Path=ClipToWrap}"
+                d:DataContext="{d:DesignData Source=../DesignData/SampleClipWrapper.xaml}"-->
+
+            <Button
+                Grid.Row="2"
+                x:Name="PickAFileButton"
+                Style="{StaticResource LargeAppBarButtonStyle}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Click="PickAFileButton_Click"
+                >
+                <FontIcon 
+                    Glyph="&#xE01E;" 
+                    Margin="2.4,2.4,0,0" 
+                    FontSize="28"
+                    FontFamily="{StaticResource AppFont}"
+                    />
+                <Button.RenderTransform>
+                    <CompositeTransform/>
+                </Button.RenderTransform>
+            </Button>
+        </Grid>
+
+    </Grid>
+
+
+    <Page.BottomAppBar>
+        <CommandBar
+            x:Name="m_bottomAppBar"
+            Opened="m_bottomAppBar_Opened"
+            Closed="m_bottomAppBar_Closed"
+            >
+            <CommandBar.PrimaryCommands/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton 
+                    Label="save" 
+                    Click="TranscodeButton_Click"
+                    />
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

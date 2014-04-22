@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30114.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helios", "Helios\Helios.csproj", "{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helios.Controls", "Helios.Controls\Helios.Controls.csproj", "{3BC09D88-CD3A-4074-9E05-75B7CC8E9517}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Debug|ARM.ActiveCfg = Debug|ARM
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Debug|ARM.Build.0 = Debug|ARM
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Debug|ARM.Deploy.0 = Debug|ARM
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Debug|x86.ActiveCfg = Debug|x86
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Debug|x86.Build.0 = Debug|x86
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Debug|x86.Deploy.0 = Debug|x86
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Release|ARM.ActiveCfg = Release|ARM
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Release|ARM.Build.0 = Release|ARM
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Release|ARM.Deploy.0 = Release|ARM
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Release|x86.ActiveCfg = Release|x86
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Release|x86.Build.0 = Release|x86
+		{20D66E28-B361-4CBB-AF5A-B7DCF2247AB7}.Release|x86.Deploy.0 = Release|x86
+		{3BC09D88-CD3A-4074-9E05-75B7CC8E9517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC09D88-CD3A-4074-9E05-75B7CC8E9517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BC09D88-CD3A-4074-9E05-75B7CC8E9517}.Debug|ARM.ActiveCfg = Debug|ARM
+		{3BC09D88-CD3A-4074-9E05-75B7CC8E9517}.Debug|ARM.Build.0 = Debug|ARM
+		{3BC09D88-CD3A-4074-9E05-75B7CC8E9517}.Debug|x86.ActiveCfg = Debug|x86
+		{3BC09D88-CD3A-4074-9E05-75B7CC8E9517}.Debug|x86.Build.0 = Debug|x86
+		{3BC09D88-CD3A-4074-9E05-75B7CC8E9517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BC09D88-CD3A-4074-9E05-75B7CC8E9517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BC09D88-CD3A-4074-9E05-75B7CC8E9517}.Release|ARM.ActiveCfg = Release|ARM
+		{3BC09D88-CD3A-4074-9E05-75B7CC8E9517}.Release|ARM.Build.0 = Release|ARM
+		{3BC09D88-CD3A-4074-9E05-75B7CC8E9517}.Release|x86.ActiveCfg = Release|x86
+		{3BC09D88-CD3A-4074-9E05-75B7CC8E9517}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
